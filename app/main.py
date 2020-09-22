@@ -3,7 +3,6 @@ import pickle
 
 # App and model initializer
 app = Flask(__name__)
-drugai = app.drugai
 with open('ml_model.pkl', 'rb') as file:
     model = pickle.load(file)
 
@@ -35,7 +34,3 @@ def result():
     prediction = model.predict([list(data.values())])
 
     return jsonify(prediction)
-
-
-if __name__ == '__main__':
-    app.run()
