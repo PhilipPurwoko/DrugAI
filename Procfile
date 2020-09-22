@@ -1,1 +1,1 @@
-web: gunicorn drugai.wsgi --log-file -
+web: gunicorn --bind 0.0.0.0:$PORT drugai:app
