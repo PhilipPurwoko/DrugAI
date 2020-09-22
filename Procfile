@@ -1,1 +1,1 @@
-web: gunicorn drugai:app
+web: gunicorn drugai.wsgi --log-file -
