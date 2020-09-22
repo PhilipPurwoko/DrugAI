@@ -3,6 +3,7 @@ import pickle
 
 # App and model initializer
 app = Flask(__name__)
+drugai = app.drugai
 with open('ml_model.pkl', 'rb') as file:
     model = pickle.load(file)
 
