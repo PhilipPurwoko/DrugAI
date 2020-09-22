@@ -34,7 +34,3 @@ def result():
     prediction = model.predict([list(data.values())])
 
     return jsonify(prediction)
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
