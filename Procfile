@@ -1,1 +1,1 @@
-web: gunicorn --bind 0.0.0.0:$PORT drugai:app
+web: gunicorn drugai:app
