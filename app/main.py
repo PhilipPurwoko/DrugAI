@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify
 import pickle
 
 # App and model initializer
-app = Flask(__name__)
+app = Flask(__name__,template_folder='templates')
 with open('ml_model.pkl', 'rb') as file:
     model = pickle.load(file)
 
