@@ -2,56 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DRUG AI | Machine Learning Technologhy</title>
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div style="height: 50px"></div>
         <div align="center" class="container">
             <h1>DRUG AI</h1>
             <h3>Built with machine learning in python</h3>
         </div>
         <div class="container">
-            <form action="{{ url_for('predict')}}" method="POST" class="needs-validation">
-                <div class="row">
-                    <div class="col">
-                        <label for="age"><strong>Age</strong></label>
-                        <input class="form-control" type="text" name="age" placeholder="Age" autocomplete='off' required>
-                    </div>
+            <form action="{{ url_for('predict')}}" method="POST" class="needs-validation" id="main-form">
+                <div class="form-group">
+                    <label for="age"><strong>Age</strong></label>
+                    <input class="form-control" type="number" name="age" placeholder="25" autocomplete='off' required>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <label for="sex"><strong>Sex</strong></label>
-                        <p>0 = Woman, 1 = Man</p>
-                        <input class="form-control" type="text" name="sex" placeholder="Sex" autocomplete='off' required>
-                    </div>
+                <div class="form-group">
+                    <label for="sex"><strong>Sex</strong></label>
+                    <select class="form-control" name="sex" id="sex" form="main-form" required>
+                    	<option value="1">Man</option>
+                    	<option value="0">Woman</option>
+                    </select>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <label for="bp"><strong>Blood Pressure</strong></label>
-                        <p>0 = High, 1 = Low, 2 = Normal</p>
-                        <input class="form-control" type="text" name="bp" placeholder="Blood Pressure" autocomplete='off' required>
-                    </div>
+                <div class="form-group">
+                    <label for="bp"><strong>Blood Pressure</strong></label>
+                    <select class="form-control" name="bp" id="bp" form="main-form" required>
+                    	<option value="0">High</option>
+                    	<option value="1">Low</option>
+                    	<option value="2">Normal</option>
+                    </select>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <label for="chol"><strong>Cholesterol</strong></label>
-                        <p>0 = High, 1 = Normal</p>
-                        <input class="form-control" type="text" name="chol" placeholder="Cholesterol" autocomplete='off' required>
-                    </div>
+                <div class="form-group">
+                    <label for="chol"><strong>Cholesterol</strong></label>
+                    <select class="form-control" name="chol" id="chol" form="main-form" required>
+                    	<option value="0">High</option>
+                    	<option value="1">Normal</option>
+                    </select>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <label for="natok"><strong>Na to Potassium Ration</strong></label>
-                        <input class="form-control" type="text" name="natok" placeholder="14.7" autocomplete='off' required>
-                    </div>
+                <div class="form-group">
+                    <label for="natok"><strong>Na to Potassium Ration</strong></label>
+                    <input class="form-control" type="number" step="0.01" name="natok" placeholder="14.7" autocomplete='off' required>
                 </div>
                 <hr>
-                <div class="row">
-                    <div class="col">
-                        <button type="submit" class="btn btn-primary btn-block">Submit Data</button>
-                    </div>
+                <div class="form-group">
+                	<button type="submit" class="btn btn-primary btn-block">Submit Data</button>
                 </div>
             </form>
         </div>
@@ -65,9 +61,11 @@
             </div>
         </div>
     </div>
+    <div style="height: 50px"></div>
     <div class="container">
     	<div class="row"  style="width: 50%;margin: auto;">
     		<div class="col">
+    			<hr>
     			<h2 align="center">Developer</h2>
     			<p><a href="https://github.com/PhilipPurwoko/">Philip Purwoko</a></p>
     			<p>DrugAI adalah proyek open source dengan <strong>GPL-3.0 License</strong></p>
